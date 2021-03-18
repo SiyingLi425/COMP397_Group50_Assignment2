@@ -10,6 +10,7 @@ public class CameraController : MonoBehaviour
 {
     public float mouseSensitivity = 5.0f;
     public Transform playerBody;
+    public Joystick joystick;
 
     private float XRotation = 0.0f;
 
@@ -26,8 +27,13 @@ public class CameraController : MonoBehaviour
     {
         if (!PauseMenu.GamePaused)
         {
-            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+
+            float x = joystick.Horizontal;
+            float z = joystick.Vertical;
+
+            float mouseX = x * mouseSensitivity;
+            float mouseY = z * mouseSensitivity;
+
 
             XRotation -= mouseY;
             XRotation = Mathf.Clamp(XRotation, 0.0f, 20.0f);

@@ -22,6 +22,9 @@ public enum PaladinState
 public class PlayerBehaviour : MonoBehaviour
 {
     [Header("Controllers")]
+    public Joystick joystick;
+    public float horizontalSensitivity;
+    public float verticalSensitivity;
     public CharacterController controller;
 
     [Header("Movement Settings")]
@@ -112,8 +115,8 @@ public class PlayerBehaviour : MonoBehaviour
             if (isGrounded && velocity.y < 0)
                 velocity.y = -2.0f;
 
-            float x = Input.GetAxis("Horizontal");
-            float z = Input.GetAxis("Vertical");
+            float x = joystick.Horizontal;
+            float z = joystick.Vertical;
 
             if (x == 0 && z == 0 && isGrounded)
             {
@@ -128,21 +131,12 @@ public class PlayerBehaviour : MonoBehaviour
                     animator.SetInteger("AnimState", (int)PaladinState.RUN);
             }
 
-            if (Input.GetButton("Jump") && isGrounded)
-            {
-                velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
-                animator.SetInteger("AnimState", (int)PaladinState.JUMP);
 
-                if(animator.GetInteger("AnimState") == (int)PaladinState.JUMP)
-                {
-                    animator.Play((int)PaladinState.JUMP, -1, 0f);
-                }
-
-                //play jump audio
-                jump.Play();
-            }
+            //if (Input.GetButton("Jump") && isGrounded)
+            //{
+            //    Jump();
+            //}
         }
-
 
         velocity.y += gravity * Time.deltaTime;
 
@@ -153,38 +147,38 @@ public class PlayerBehaviour : MonoBehaviour
 
 
 
-        // open or close inventory UI
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            inventoryActive = !inventoryActive;
-            inventory.SetActive(inventoryActive);
-        }
+        //// open or close inventory UI
+        //if (Input.GetKeyDown(KeyCode.I))
+        //{
+        //    inventoryActive = !inventoryActive;
+        //    inventory.SetActive(inventoryActive);
+        //}
 
-        if(isNearSword && Input.GetKeyDown(KeyCode.F) && gotSword == false)
-        {
-            sword.SetActive(true);
-            swordItem.SetActive(false);
-            gotSword = true;
-        }
+        //if(isNearSword && Input.GetKeyDown(KeyCode.F) && gotSword == false)
+        //{
+        //    sword.SetActive(true);
+        //    swordItem.SetActive(false);
+        //    gotSword = true;
+        //}
 
 
 
-        //slash
-        if (gotSword && Input.GetMouseButton(0) && isAttacking == false && isGrounded)
-        {
-            StartCoroutine(Slash());
-        }
+        ////slash
+        //if (gotSword && Input.GetMouseButton(0) && isAttacking == false && isGrounded)
+        //{
+        //    StartCoroutine(Slash());
+        //}
 
         //temp key to use potion before implementing inventory
-        if ((Input.GetKeyDown(KeyCode.H)))
-        {
-            if (gameController.potionCount > 0)
-            {
-                currentHealth += healAmount;
-                gameController.usePotion();
-                healthBar.SetHealth(currentHealth);
-            }
-        }
+        //if ((Input.GetKeyDown(KeyCode.H)))
+        //{
+        //    if (gameController.potionCount > 0)
+        //    {
+        //        currentHealth += healAmount;
+        //        gameController.usePotion();
+        //        healthBar.SetHealth(currentHealth);
+        //    }
+        //}
 
         //if (Input.GetKeyDown(KeyCode.T))
         //{
@@ -192,11 +186,58 @@ public class PlayerBehaviour : MonoBehaviour
         //}
 
 
+    }
+    void Jump()
+    {
+        if (!isAttacking && !isDead)
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
+            animator.SetInteger("AnimState", (int)PaladinState.JUMP);
 
+            if (animator.GetInteger("AnimState") == (int)PaladinState.JUMP)
+            {
+                animator.Play((int)PaladinState.JUMP, -1, 0f);
+            }
 
+            //play jump audio
+            jump.Play();
+        }
+    }
+    void SlashAttack()
+    {
 
+        if (gotSword && isAttacking == false && isGrounded)
+        {
+            StartCoroutine(Slash());
+        }
     }
 
+    void pickItem()
+    {
+        if (isNearSword  && gotSword == false)
+        {
+            sword.SetActive(true);
+            swordItem.SetActive(false);
+            gotSword = true;
+        }
+    }
+
+    void toggleInventory()
+    {
+
+        inventoryActive = !inventoryActive;
+        inventory.SetActive(inventoryActive);
+
+    }
+    void usePotion()
+    {
+        if (gameController.potionCount > 0)
+        {
+            currentHealth += healAmount;
+            gameController.usePotion();
+            healthBar.SetHealth(currentHealth);
+        }
+    }
     IEnumerator Slash()
     {
         isAttacking = true;
@@ -304,7 +345,7 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
 
-    public void usePotion()
+    public void usePotionItem()
     {
         if(gameController.potionCount > 0)
         {
@@ -366,4 +407,31 @@ public class PlayerBehaviour : MonoBehaviour
         
     }
 
+    public void onJumpButtonPressed()
+    {
+        if (isGrounded)
+        {
+            Jump();
+        }
+    }
+
+    public void onAttackButtonPressed()
+    {
+        SlashAttack();
+    }
+
+    public void onPickItemButtonPressed()
+    {
+        pickItem();
+    }
+
+    public void onInventoryButtonPressed()
+    {
+        toggleInventory();
+    }
+
+    public void onPotionButtonPressed()
+    {
+        usePotionItem();
+    }
 }
