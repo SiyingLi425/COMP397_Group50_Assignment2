@@ -15,17 +15,16 @@ public class PauseMenu : MonoBehaviour
     
 
     public SceneDataSO sceneData;
+    private DontDestroy dontDestroy;
 
 
-
-
-
-
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-
-
+        dontDestroy = FindObjectOfType<DontDestroy>();
+        if (dontDestroy && dontDestroy.load)
+        {
+            LoadGamePressed();
+        }
     }
 
     /*public void TogglePause()
@@ -43,7 +42,7 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 1f;
         }
     }*/
-    
+
     public void Resume()
     {
         pauseMenuUI.SetActive(false);

@@ -21,6 +21,7 @@ public enum PaladinState
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    public int animState;
     [Header("Controllers")]
     public Joystick joystick;
     public float horizontalSensitivity;
@@ -91,8 +92,13 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
+        animState = animator.GetInteger("AnimState");
+        if(animState == 2)
+        {
+            Debug.Log("jump animation");
+        }
         if (isTalking)
         {
             animator.SetInteger("AnimState", (int)PaladinState.IDLE);
@@ -127,14 +133,16 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 Vector3 move = transform.right * x + transform.forward * z;
                 controller.Move(move * maxSpeed * Time.deltaTime);
-                //if (isGrounded)
+                if (isGrounded)
                     animator.SetInteger("AnimState", (int)PaladinState.RUN);
             }
 
 
             //if (Input.GetButton("Jump") && isGrounded)
             //{
+            //    Debug.Log(animator.GetInteger("AnimState"));
             //    Jump();
+            //    Debug.Log(animator.GetInteger("AnimState"));
             //}
         }
 
@@ -193,11 +201,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
             animator.SetInteger("AnimState", (int)PaladinState.JUMP);
-
-            if (animator.GetInteger("AnimState") == (int)PaladinState.JUMP)
-            {
-                animator.Play((int)PaladinState.JUMP, -1, 0f);
-            }
+            waitJump();
 
             //play jump audio
             jump.Play();
@@ -246,6 +250,12 @@ public class PlayerBehaviour : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
  
         isAttacking = false;
+    }
+
+    IEnumerator waitJump()
+    {
+        animator.SetInteger("AnimState", (int)PaladinState.JUMP);
+        yield return new WaitForSeconds(1.0f);
     }
 
     public void TakeDamange(int damage)
@@ -350,7 +360,7 @@ public class PlayerBehaviour : MonoBehaviour
         if(gameController.potionCount > 0)
         {
             currentHealth += healAmount;
-            gameController.usePotion();
+            usePotion();
         }
     }
 

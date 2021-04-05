@@ -13,6 +13,7 @@ public class SlimeSpawner : MonoBehaviour
     public int slimes = 0;
 
     public int maxSlimes = 3;
+    public int range = 5;
     
     [SerializeField]
     private TimedObjectFactory factory;
@@ -26,7 +27,10 @@ public class SlimeSpawner : MonoBehaviour
             if (slimes < maxSlimes)
             {
                 var inst = factory.GetNewInstance();
-                inst.transform.position = new Vector3(Random.Range(330.0f, 335.0f), 6.0f, Random.Range(295.0f, 300.0f));
+                float x = this.transform.position.x;
+                float z = this.transform.position.z;
+                inst.transform.position = new Vector3(Random.Range(x - range, x + range), 6.0f, Random.Range(z - range, z + range));
+                //inst.transform.position = new Vector3(Random.Range(330.0f, 335.0f), 6.0f, Random.Range(295.0f, 300.0f));
                 slimes++;
                 
             }

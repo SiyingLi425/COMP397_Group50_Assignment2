@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.55288124, g: 0.79616433, b: 0.9631245, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1194,7 +1194,7 @@ GameObject:
   - component: {fileID: 194947089}
   - component: {fileID: 194947088}
   m_Layer: 5
-  m_Name: Potion
+  m_Name: X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1209,7 +1209,7 @@ RectTransform:
   m_GameObject: {fileID: 194947086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6996058, y: 1.01, z: 1.01}
+  m_LocalScale: {x: 1.5026895, y: 0.8929814, z: 0.8929814}
   m_Children: []
   m_Father: {fileID: 1193698705}
   m_RootOrder: 0
@@ -1252,7 +1252,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Potion
+  m_Text: X
 --- !u!222 &194947089
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1816,7 +1816,7 @@ RectTransform:
   m_GameObject: {fileID: 317783445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75172, y: 0.75172, z: 0.75172}
   m_Children:
   - {fileID: 1151687650}
   - {fileID: 1877631643}
@@ -4408,7 +4408,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.6128, y: -90.5}
+  m_AnchoredPosition: {x: -8.6128, y: -149}
   m_SizeDelta: {x: 448.4789, y: 82.5261}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &773846394
@@ -5431,7 +5431,7 @@ MonoBehaviour:
   dialogue:
     name: Equipment
     sentences:
-    - Walk to the equipment and Press F to eqiup
+    - Walk to the equipment and Press Y to eqiup
     - Don't forget to check what's in the chest!
     - 'I wonder what is that shiny thing over there? '
 --- !u!65 &1042076942
@@ -5879,7 +5879,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28, y: -202.3}
+  m_AnchoredPosition: {x: -345, y: -2}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1112923829
@@ -6155,6 +6155,7 @@ MonoBehaviour:
   currentCount: 0
   slimes: 0
   maxSlimes: 3
+  range: 5
   factory: {fileID: 983046498}
 --- !u!4 &1148368427
 Transform:
@@ -6164,7 +6165,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148368425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 335.94904, y: 7.246595, z: 302.2564}
+  m_LocalPosition: {x: 271, y: 7.246595, z: 239.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6281,7 +6282,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.612793, y: 201.9}
+  m_AnchoredPosition: {x: -12, y: 167}
   m_SizeDelta: {x: 448.4789, y: 82.5261}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1151687651
@@ -6671,7 +6672,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 116, y: -202.3}
+  m_AnchoredPosition: {x: -426, y: -24}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1193698706
@@ -6904,7 +6905,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 296, y: -12}
+  m_AnchoredPosition: {x: 415, y: -12}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1219953696
@@ -7026,15 +7027,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4103a6e83d19727478a7a0e023891d0e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 297.76
+      value: 300.46
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4103a6e83d19727478a7a0e023891d0e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.08
+      value: 9.11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4103a6e83d19727478a7a0e023891d0e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 291.43
+      value: 294.41
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4103a6e83d19727478a7a0e023891d0e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8080,8 +8081,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361587490}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 299.88, y: 8.97, z: 290.81}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 290.1, y: 8.97, z: 282.2}
+  m_LocalScale: {x: 0.69985, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1632993561}
   m_RootOrder: 3
@@ -8101,11 +8102,16 @@ MonoBehaviour:
   dialogue:
     name: 'Attacking '
     sentences:
-    - 'oh no!! enemies are infront of us..
+    - 'oh no!! Those slimes got a star fragment!
 
-      Looks like they were already weakened
-      by previous adventurers'
-    - "Good thing you picked up that sword earlier\nUse left click to attack! \n"
+      Looks like they were already
+      weakened by previous adventurers'
+    - 'Good thing you picked up that sword earlier
+
+      Use B to attack! Defeat
+      them and take the star fragment!
+
+'
     - Don't forget to use that potion from earlier if your hp is getting low
 --- !u!65 &1361587493
 BoxCollider:
@@ -8205,7 +8211,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.6128, y: 9.3}
+  m_AnchoredPosition: {x: -8.6128, y: -33}
   m_SizeDelta: {x: 448.4789, y: 82.5261}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1377599652
@@ -10194,6 +10200,7 @@ Transform:
   - {fileID: 1042076945}
   - {fileID: 1745712227}
   - {fileID: 1361587491}
+  - {fileID: 2075089612}
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10532,12 +10539,12 @@ MonoBehaviour:
   dialogue:
     name: Movement
     sentences:
-    - 'Look around by moving your mouse
+    - 'Look around by moving right joystick
 
 '
-    - 'Move around with WASD
+    - 'Move around with left joystick
 
-      Jump with Space'
+      Jump with A'
     - Try going to that campfire!
 --- !u!65 &1670166766
 BoxCollider:
@@ -12053,7 +12060,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.6129, y: 105.1}
+  m_AnchoredPosition: {x: -8.6129, y: 74}
   m_SizeDelta: {x: 448.4789, y: 82.5261}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1877631644
@@ -13165,7 +13172,7 @@ GameObject:
   - component: {fileID: 2003683670}
   - component: {fileID: 2003683669}
   m_Layer: 5
-  m_Name: Select
+  m_Name: Y
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13223,7 +13230,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Select
+  m_Text: Y
 --- !u!222 &2003683670
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13840,6 +13847,119 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053923224}
   m_CullTransparentMesh: 1
+--- !u!1 &2075089611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2075089612}
+  - component: {fileID: 2075089616}
+  - component: {fileID: 2075089615}
+  - component: {fileID: 2075089614}
+  - component: {fileID: 2075089613}
+  m_Layer: 0
+  m_Name: UsePathTut
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2075089612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075089611}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 265.8, y: 8.97, z: 271.8}
+  m_LocalScale: {x: 0.4889922, y: 1, z: 0.5641509}
+  m_Children: []
+  m_Father: {fileID: 1632993561}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2075089613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075089611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62cf3ec18f81d0341be74fe709b92971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Path
+    sentences:
+    - Looks like there are a lot of evil slimes in the woods
+    - 'More just comes back if you defeat them, let''s try to stay on the path '
+--- !u!65 &2075089614
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075089611}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 37.12628, y: 18.172049, z: 48.98575}
+  m_Center: {x: -13.766541, y: -1.96206, z: -4.6857452}
+--- !u!23 &2075089615
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075089611}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2075089616
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075089611}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2079988573
 GameObject:
   m_ObjectHideFlags: 0
@@ -14106,7 +14226,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 373.1, y: 13}
+  m_AnchoredPosition: {x: 337, y: 13}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2147145941
@@ -14367,7 +14487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5492579231106580488, guid: 51d6e4697864c864bbb447fff4450562, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: Press H to use it to recover your health when injured!
+      value: Press X to use it to recover your health when injured!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51d6e4697864c864bbb447fff4450562, type: 3}
