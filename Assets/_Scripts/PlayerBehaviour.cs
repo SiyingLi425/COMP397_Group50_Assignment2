@@ -51,7 +51,7 @@ public class PlayerBehaviour : MonoBehaviour
 
 
     [Header("UI")]
-    public GameObject inventory;
+    public GameObject inventoryUI;
     private bool inventoryActive = false;
     public bool isTalking = false;
 
@@ -74,7 +74,8 @@ public class PlayerBehaviour : MonoBehaviour
     public int currentHealth;
     public int healAmount = 50;
 
-
+    public Inventory inventory;
+    [SerializeField] private UI_Inventory uiInventory;
 
     private bool isAttacking;
     private bool isDead;
@@ -88,7 +89,10 @@ public class PlayerBehaviour : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
         currentHealth = maxHealth;
 
-        inventory.SetActive(inventoryActive);
+        inventoryUI.SetActive(inventoryActive);
+        inventory = new Inventory();
+        uiInventory.SetInventory(inventory);
+
     }
 
 
@@ -223,6 +227,7 @@ public class PlayerBehaviour : MonoBehaviour
             sword.SetActive(true);
             swordItem.SetActive(false);
             gotSword = true;
+            inventory.AddItem(new Item { itemType = Item.ItemType.Sword, amount = 1 });
         }
     }
 
@@ -230,7 +235,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
 
         inventoryActive = !inventoryActive;
-        inventory.SetActive(inventoryActive);
+        inventoryUI.SetActive(inventoryActive);
 
     }
     void usePotion()

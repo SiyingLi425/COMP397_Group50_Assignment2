@@ -29,6 +29,7 @@ public class CrystalController : MonoBehaviour
         {
             Debug.Log("Found Crystal");
             gameController.addCrystal();
+        
             Destroy(this.gameObject);
             TriggerDialogue();
         }

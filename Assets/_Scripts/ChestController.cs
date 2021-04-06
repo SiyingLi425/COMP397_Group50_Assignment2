@@ -11,6 +11,7 @@ public class ChestController : MonoBehaviour
     public AudioSource chestOpen;
     public GameController gameController;
 
+
     public Dialogue dialogue;
 
     private bool isOpened = false;
@@ -28,6 +29,7 @@ public class ChestController : MonoBehaviour
             chestOpen.Play();
             isOpened = true;
             gameController.addPotion();
+
             TriggerDialogue();
         }
 
