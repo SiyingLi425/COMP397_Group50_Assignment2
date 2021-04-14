@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
 {
     public SoundClip activeSoundClip;
     public AudioSource[] audioSources;
+    public QuestAchievementController questController;
+
 
     [Header("Crystal Count")]
     public int crystalCount = 0;
@@ -23,6 +25,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerBehaviour>();
+        questController = GetComponent<QuestAchievementController>();
     }
 
     // Update is called once per frame
@@ -35,12 +38,20 @@ public class GameController : MonoBehaviour
     {
         crystalCount++;
         player.inventory.AddItem(new Item { itemType = Item.ItemType.StarFragment, amount = 1 });
+        questController.setCrystal(crystalCount);
     }
 
     public void addPotion()
     {
         potionCount++;
         player.inventory.AddItem(new Item { itemType = Item.ItemType.HealthPotion, amount = 1 });
+
+
+    }
+    public void addPotion(int num)
+    {
+        potionCount += num;
+        player.inventory.AddItem(new Item { itemType = Item.ItemType.HealthPotion, amount = num });
 
 
     }

@@ -147,5 +147,6 @@ public class EnemyBehaviour : MonoBehaviour
         animator.SetInteger("AnimState", (int)SlimeState.DIE);
         yield return new WaitForSeconds(2);
         Destroy(this.gameObject);
+        playerBehaviour.gameController.questController.toggleEnemy();
     }
 }

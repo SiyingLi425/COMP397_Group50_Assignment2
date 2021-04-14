@@ -31,6 +31,7 @@ public class ChestController : MonoBehaviour
             gameController.addPotion();
 
             TriggerDialogue();
+            gameController.questController.togglePotion();
         }
 
     }

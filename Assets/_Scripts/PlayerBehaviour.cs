@@ -54,6 +54,8 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject inventoryUI;
     private bool inventoryActive = false;
     public bool isTalking = false;
+    public GameObject questUI;
+    public bool questActive = false;
 
 
     [Header("Armor")]
@@ -89,9 +91,12 @@ public class PlayerBehaviour : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
         currentHealth = maxHealth;
 
+        questUI.SetActive(questActive);
+
         inventoryUI.SetActive(inventoryActive);
         inventory = new Inventory();
         uiInventory.SetInventory(inventory);
+
 
     }
 
@@ -228,6 +233,7 @@ public class PlayerBehaviour : MonoBehaviour
             swordItem.SetActive(false);
             gotSword = true;
             inventory.AddItem(new Item { itemType = Item.ItemType.Sword, amount = 1 });
+            gameController.questController.toggleWeapon();
         }
     }
 
@@ -238,6 +244,8 @@ public class PlayerBehaviour : MonoBehaviour
         inventoryUI.SetActive(inventoryActive);
 
     }
+
+
     void usePotion()
     {
         if (gameController.potionCount > 0)
@@ -448,5 +456,11 @@ public class PlayerBehaviour : MonoBehaviour
     public void onPotionButtonPressed()
     {
         usePotionItem();
+    }
+
+    public void toggleQuests()
+    {
+        questActive = !questActive;
+        questUI.SetActive(questActive);
     }
 }
