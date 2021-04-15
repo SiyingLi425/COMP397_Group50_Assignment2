@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-/**
-* Vincent Tse.
-* 2021-02-13
-*/
+/*
+Author: Group 50
+Vincent Tse - 301050515
+Siying Li - 301054781
+Derek Chan - 301021992
+Last Modified: April 14, 2021
+Description: Manages adding items to inventory, using items, save and load game.
+ */
 public class GameController : MonoBehaviour
 {
     public SoundClip activeSoundClip;

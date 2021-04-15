@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/**
- * Vincent Tse.
- * 2021-02-13
- * 
- * Siying Li,
- * 2021-03-02
+/*
+Author: Group 50
+Vincent Tse - 301050515
+Siying Li - 301054781
+Derek Chan - 301021992
+Last Modified: April 14, 2021
+Description: Manages player controls and properties such as hp.
  */
 public enum PaladinState
 {

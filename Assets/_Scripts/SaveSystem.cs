@@ -3,7 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-
+/*
+Author: Group 50
+Vincent Tse - 301050515
+Siying Li - 301054781
+Derek Chan - 301021992
+Last Modified: April 14, 2021
+Description: manages saving game state for loading later on.
+ */
 public static class SaveSystem
 {
     public static void SavePlayer (PlayerBehaviour player)
